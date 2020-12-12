@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Set time Out</title>
+</head>
+	<style type="text/css">
+		.box{
+			height: 200px;
+			width: 200px;
+			padding:20px;
+			float: left;
+			border: 1px solid black;
+			background-color: silver;
+		}
+		.dragbox{
+			background-color: orange;
+			margin-bottom: 5px;
+		}
+	</style>
+<body>
+	<button name="startint" id="startint" class="" onclick="startinterval()">Start</button>
+	<button name="stopint" id="stopint" class="" onclick="stopinterval()">Stop</button>
+
+	<div>
+		<h1 id="greeting">Welcome User</h1>
+	</div>
+	<div>
+		<input type="text" name="url" id="url" class="">
+		<input type="button" name="gourl" id="gourl" class="" value="Go URL" onclick="gourl()">
+		<input type="button" name="favurl" id="favurl" value="Fav URL" onclick="favurl('https://linkedin.com')">
+	</div>
+	<br/>
+	<hr/>
+	<div>
+		<input type="button" name="click1" id="click1" class="" value="Click Me 1" onclick="clicked(this)">
+		<input type="button" name="click2" id="click2" class="" value="Click Me 1" onclick="clicked(this)">
+		<input type="button" name="click3" id="click3" class="" value="Click Me 3" onclick="clicked(this)">
+		<input type="button" name="click4" id="click4" class="" value="Click Me 4" onclick="click4()">
+	</div>
+	<div>
+		<img name="img1" id="img1" class="" width="200px" height="200px" onmouseover="imgover(this)" onmouseout="imgout(this)">
+	</div>
+	<div class="box" ondrop="drop()" ondragover="dragover()">Box 1
+		<div class="dragbox" ondragstart="dragstart()" draggable="true">Have to cook</div>
+		<div class="dragbox" ondragstart="dragstart()" draggable="true">Have to shop</div>
+		<div class="dragbox" ondragstart="dragstart()" draggable="true">Have to study</div>
+		<div class="dragbox" ondragstart="dragstart()" draggable="true">Have to eat</div>
+	</div>
+	<div class="box" ondrop="drop()" ondragover="dragover()">Box 2</div>
+	<div class="box" ondrop="drop()" ondragover="dragover()">Box 3</div>
+	<div class="box" ondrop="drop()" ondragover="dragover()">Box 4</div>
+
+</body>
+<script type="text/javascript">
+	let item;
+	function dragstart(){
+		item = event.target;
+	}
+	function drop(){
+		console.log("i am accepting dropping");
+		event.preventDefault();
+		if(event.target.className === "box"){
+			event.target.appendChild(item);
+		}
+	}
+	function dragover(){
+			event.preventDefault();
+			console.log("over drag it working");
+		}
+	function mypopup(){
+		window.alert("Welcome Sir");
+	}
+	
+	let mytimer;
+
+	function startinterval(){
+		mypopup();
+		mytimer = window.setTimeout(startinterval,2000);
+	}
+
+	function stopinerval(){
+		window.clearInterval(mytimer);
+	}
+
+	// For Greetion
+
+	window.setTimeout(newmsg,2000);
+
+	function newmsg(){
+		document.getElementById("greeting").innerHTML="Get out Thar Gyi"
+	}
+	function gourl(){
+		let geturl = document.getElementById("url");
+		window.location = "https://"+geturl.value;
+	}
+	function favurl(url){
+		window.location = url;
+	}
+	// this keyword (event handler)
+
+	function clicked(t){
+		//console.log(t);
+		//console.log(t.name);
+		t.value = "Clicked";
+	}
+	function click4(){
+		let myevn = event.target;
+		console.log(myevn);
+	}
+	let getimg1 =document.getElementById("img1");
+	window.onload =function(){
+		getimg1.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTdbwDjH4CX0RYUJKuknhzsWNyq8HwFqJa0g&usqp=CAU";
+	}
+	function imgover(t){
+		t.src="https://www.kmart.com.au/wcsstore/Kmart/images/ncatalog/f/5/42752295-1-f.jpg";
+	}
+	function imgout(t){
+		t.src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTdbwDjH4CX0RYUJKuknhzsWNyq8HwFqJa0g&usqp=CAU";
+	}
+</script>
+</html>

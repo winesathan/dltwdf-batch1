@@ -1,0 +1,109 @@
+body{
+	background-image: url(../img/background/background.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: 'Poppins', sans-serif;
+	
+}
+
+
+
+.signupform{
+	border: 1px;
+	border-style: solid;
+	width: 360px;
+	height: 600px;
+	background-color: white;
+	margin: 160px auto 0 550px;
+	
+	border-color: white;
+	border-radius: 5px;
+	font-size: 15px;
+	
+
+	
+}
+.signup{
+	padding-left: 18px;
+	padding-bottom: 18px;
+	font-size: 20px;
+}
+.form{
+	padding-left: 18px;
+}
+
+input[type="text"]{
+	
+	width: 320px;
+	border-style: none;
+	border-bottom: 1px solid;
+	border-color: rgba(0,28,0,0.51);
+	font-family: 'Poppins', sans-serif;
+}
+input[type="email"]{
+	
+	width: 320px;
+	border-style: none;
+	border-bottom: 1px solid;
+	border-color: rgba(0,28,0,0.51);
+	font-family: 'Poppins', sans-serif;
+}
+input[type="password"]{
+	
+	width: 320px;
+	border-style: none;
+	border-bottom: 1px solid;
+	border-color: rgba(0,28,0,0.51);
+	font-family: 'Poppins', sans-serif;
+}
+input[type="date"]{
+	
+	width: 320px;
+	border-style: none;
+	border-bottom: 1px solid;
+	border-color: rgba(0,28,0,0.51);
+	font-family: 'Poppins', sans-serif;
+}
+input[type="submit"]{
+	width: 320px;
+	height: 30px;
+	background-color: rgba(25,43,238,0.88);
+	border-style: none;
+	border-radius: 4px;
+	color: white;
+	font-family: 'Poppins', sans-serif;
+}
+
+
+}
+.color{
+	
+	border-radius: 4px;
+}
+
+.p1{
+	text-align: center;
+	font-size: 15px
+
+}
+
+p a{
+	
+	text-decoration:none;
+	font-size: 15px;
+
+}
+
+.p2{
+	font-size: 12px;
+	opacity: .9;
+
+	
+}
+
+.p3{
+	text-align: center;
+	opacity: .9;
+	padding-left:1px;
+}
+                         

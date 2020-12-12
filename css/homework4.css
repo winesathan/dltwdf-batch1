@@ -1,0 +1,58 @@
+body{
+	background-image: url(../css/img/background.jpg);
+}
+
+h1{
+	margin: 10px;
+	color: white;
+	text-shadow: -9px -7px 3px black;
+	text-align: center;
+}
+
+.content{
+	border: dotted;
+	color: white;
+	width: 300px;
+	height: 250px;
+	margin: 180px 1000px;
+	background: rgba(194,205,190,0.30);
+}
+.heading1{
+     text-align: center;
+     text-shadow: -9px -7px 3px black;
+}
+
+.name{
+	text-shadow: -9px -7px 3px black;
+}
+.password{
+	text-shadow: -9px -7px 3px black;
+	margin:0 0 0 3px;
+}
+
+p{
+	text-align: justify;
+	font-size: 16px;
+	opacity: 0.5px;
+	color: white;
+}
+.formelements{
+	text-align: center;
+	line-height: 25px;
+}
+.cancel{
+	margin:0 0 0 110px;
+}
+
+.foot{
+     color: blue;
+     background-color: white;
+     width: 100%;
+     height: 50px;
+     margin: 0 150px 0 0;
+
+}
+pre{
+	font-size: 15px;
+	text-align: right;
+}

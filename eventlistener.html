@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Event Listener</title>
+</head>
+<body>
+	<div>
+		<div>
+			<p id="paragraph">
+				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+			</p>
+		</div>
+		<!-- <button name="hidename" id="hideme" class="">Hide Me</button> -->
+		<button name="hidename" id="hideme" class="" onclick="hideme()">Hide Me</button>
+	</div>
+	
+		
+	
+	<div>
+		<p id="greeting">I love Myanmar</p>
+		<button name="red" id="red" class="">Red</button>
+		<button name="green" id="green" class="">Green</button>
+		<button name="blue" id="blue" class="">blue</button>
+		<button name="orange" id="orange" class="">orange</button>
+	</div>
+	<div>
+		<label for="name">Name</label><br/>
+		<input type="text" name="name" id="name" class="" onchange="myfun()"><br/><br/>
+		<label for="pwd">Password</label><br/>
+		<input type="password" name="pwd" id="pwd" class=""><br/><br/>
+		<label for="gender">Gender</label>
+		<select name="gender" id="gender" class="" onchange="genderfun()">
+			<option disabled selected>Choose gender</option>
+			<option value="1">Male</option>
+			<option value="0">Female</option>
+		</select>
+		<br/><br/>
+		<label for="country">Country</label>
+		<select name="country" id="country" class="" onchange="countryfun()">
+			<option disabled selected>Choose country</option>
+			<option value="mm">Myanmar</option>
+			<option value="th">Thailand</option>
+		</select>
+		<div id="mmcity">
+			<input type="radio" name="city" id="city" class="" value="yangon">Yangon
+			<input type="radio" name="city" id="city" class="" value="mandalay">Mandalay
+			<input type="radio" name="city" id="city" class="" value="bago">Bago
+		</div>
+		<div id="thcity">
+			<input type="radio" name="city" id="city" class="" value="bangkok">Bangkok
+			<input type="radio" name="city" id="city" class="" value="phukhat">PhuKhat
+			<input type="radio" name="city" id="city" class="" value="maesaut">MaeSaut
+		</div>
+
+	</div>
+
+</body>
+<script type="text/javascript">
+	let hidemebtn = document.getElementById("hideme");
+	let pgn = document.getElementById("paragraph");
+	
+	// document.getElementById("hideme").addEventListener("click",function(){
+		// console.log("i am working mate");
+		// document.getElementById("paragraph").style.display="none";
+		// document.getElementById("hideme").innerHTML= "Show me";
+	// 	if(pgn.style.display === "none"){
+	// 		pgn.style.display = "block";
+	// 		hidemebtn.innerHTML = "Hide Me";
+	// 	}else{
+	// 		pgn.style.display = "none";
+	// 		hidemebtn.innerHTML= "Show Me";
+	// 	}
+	// })
+
+	function hideme(){
+		if(pgn.style.display === "none"){
+			pgn.style.display = "block";
+			hidemebtn.innerHTML = "Hide Me";
+		}else{
+			pgn.style.display = "none";
+			hidemebtn.innerHTML= "Show Me";
+		}
+	}
+	document.getElementById("red").addEventListener("click",function(){
+		document.getElementById("greeting").style.color="red";
+	})
+	document.getElementById("green").addEventListener("click",function(){
+		document.getElementById("greeting").style.color="green";
+	})
+
+document.getElementById("blue").addEventListener("click",function(){
+		document.getElementById("greeting").style.color="blue";
+	})
+
+document.getElementById("orange").addEventListener("click",function(){
+		document.getElementById("greeting").style.color="orange";
+	})
+
+function myfun(){
+	let txtname = document.getElementById("name");
+	txtname.value = txtname.value.toUpperCase();
+}
+//gender
+function genderfun(){
+	let gnd = document.getElementById("gender");
+	switch(gnd.value){
+		case "0":
+		window.alert("Thanks Lady");
+		break;
+		case "1":
+		window.alert("Thanks Thar gyi");
+		break;
+	}
+}
+//city
+
+document.getElementById("mmcity").style.display="none";
+document.getElementById("thcity").style.display="none";
+
+function countryfun(){
+	let cty = document.getElementById("country");
+	switch(cty.value){
+		case "mm":
+		document.getElementById("mmcity").style.display="block";
+		document.getElementById("thcity").style.display="none";
+		break;
+		case "th": xdz
+		document.getElementById("mmcity").style.display="none";
+		document.getElementById("thcity").style.display="block";
+	}
+}
+</script>
+</html>

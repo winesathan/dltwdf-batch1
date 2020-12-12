@@ -1,0 +1,30 @@
+.firstdiv{
+	font-size: 50px;
+	width: 500px;
+	height: 200px;
+	/*opacity:0.5*/
+	color: red;
+	background:rgba(29,59,127,0.5);
+	border:5px;
+	/*border-style:solid*/
+	border-style:dotted;
+	margin: 100px auto;
+
+}
+/*Universal Selector*/
+*{
+	cursor: pointer;
+}
+
+.seconddiv{
+	color:green;
+	width:800px;
+	height:800px;
+	font-size: 40px;
+	background-image:url(../img/background/bg1.jpg);
+	background-repeat:repeat;
+	/*background-repeat: no-repeat; */
+	/*background-repeat:repeat-x;*/
+	/*background-repeat: repeat-y;*/
+	background-position: center;
+}

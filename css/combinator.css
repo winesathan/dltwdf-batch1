@@ -1,0 +1,16 @@
+/*combinator*/
+.div1 i , .div1 b{
+	color: red;
+}
+/*child selector*/
+.div3 > p{
+	color: orange;
+}
+/*Adjust siblings selector*/
+.div5 + b{
+	color: blue;
+}
+/*General siblings selector*/
+.div7 ~ p{
+	color: green;
+}

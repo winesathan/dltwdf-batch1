@@ -1,0 +1,26 @@
+/*Element Selector*/
+
+p{
+	
+	color:red;
+	font-size:20px
+
+	
+}
+
+/*Group Selector*/
+h1,h2,h3,h4{
+	color:blue;
+}
+
+/*Id selector*/
+#first{
+	color: grey;
+	font-size: 40px;
+}
+
+/*Class selector*/
+.second{
+	color:green;
+	font-size: 20px;
+}
