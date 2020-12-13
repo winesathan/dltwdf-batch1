@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Arrow Function</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	//Regular Function in single parameter
+	let regsinglefun = function (num1){
+		return num1+10;
+	}
+	console.log("this is rg fun single parameter =" + regsinglefun(1));
+
+	//Regular Function in Multi parameter
+	let regmultifun = function (num1,num2){
+		return num1+num2;
+	}
+	console.log("this is rg fun Multi parameter =" + regsinglefun(1,3));
+	//Arrow Function in single parameter
+	// Method1
+	let arrsinglefun = (num1)=>{
+		return num1+10;
+	}
+	console.log("this is arr fun single parameter method 1="+ arrsinglefun(1));
+	// Method2
+	let arrsinglefun2 = num1=>{
+		return num1+10;
+	}
+	console.log("this is arr fun single parameter method 2="+ arrsinglefun(1));
+
+	// Method3
+	let arrsinglefun3 = num1=>num1+10;
+	console.log("this is arr fun single parameter method 3="+ arrsinglefun(1));
+	//Arrow Function in Multi parameter
+	let arrmultifun = (num1,num2)=>{
+		return num1+num2;
+	}
+	console.log("this is arr fun multi parameter ="+ arrmultifun(1,3));
+
+	//Arrow Function in maual function - without parameter
+	// Method1
+	let arrmanualfun1 = ()=>{
+		return "Hello I love Mandalay";
+	}
+	console.log("this is arr fun without parameter 1=" + arrmanualfun1());
+
+	// Method2
+	let arrmanualfun2 = ()=>"I am from bago";
+	console.log("this is arr fun without parameter 2=" + arrmanualfun2());
+</script>
+</html>
