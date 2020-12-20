@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Set Attribute</title>
+</head>
+<body>
+	<div>
+		<h1>My Bio</h1>
+		<p id="p1" style="background-color:yellow;color:red">I'm jack . Hello mother fucker</p>
+		<p class="p2">I am susu.I 'm your dady</p>
+	</div>
+</body>
+<script type="text/javascript">
+	console.log(document.getElementById("p1"));
+		console.log(document.getElementsByTagName("h1"));
+	let geth1tag = document.getElementsByTagName("h1");
+	let getptag = document.getElementsByTagName("p");
+	console.log(getptag);
+
+	//geth1tag[0].innerHTML ="My story";
+	geth1tag[0].setAttribute("style","text-align:center");
+	getptag[1].setAttribute("style","background-color:gray;color:white;border:1px solid red");
+
+	//Get Attribute
+	console.log(getptag[1].getAttribute("class"));
+
+	//Remove Attribute
+	getptag[0].removeAttribute("style");
+
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dom clock</title>
+</head>
+<body>
+	<div id="display">
+		
+	</div>
+</body>
+<script type="text/javascript">
+	let getdisplay = document.getElementById("display");
+	function startclock(){
+	let getdate = new Date();
+
+	let gethour = getdate.getHours();
+
+	let getminute = getdate.getMinutes();
+
+	let getsecond = getdate.getSeconds();
+	
+	let getampm;
+	switch (gethour > 12){
+		case true:
+		getampm = "PM";
+		gethour = gethour-12;
+		break;
+		case false:
+		getampm = "AM";
+		break;
+	}
+	let clock = gethour+":"+getminute+":"+getsecond+" "+getampm;
+	getdisplay.innerHTML= clock
+}
+// startclock();
+setInterval(startclock,1000);
+</script>
+</html>

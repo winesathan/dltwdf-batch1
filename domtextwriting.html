@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Text Writing</title>
+</head>
+<body>
+	<div id="display">
+		
+	</div>
+</body>
+<script type="text/javascript">
+	let getdisplay = document.getElementById("display");
+	let paragraph = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s";
+	let i = 0;
+	let j = paragraph.length;
+
+	// function startwriting(){
+	// 	getdisplay.innerHTML += paragraph[i];
+	// 	i++;
+
+	// 	if(i===j){
+	// 		clearInterval(autowritng);
+	// 	}
+	// }
+	// let autowritng = setInterval(startwriting,200);
+
+	let startwriting = ()=>{
+		getdisplay.innerHTML += paragraph[i];
+		i++;
+		stopwriting(i,j);
+	}
+
+	let stopwriting = (start,end)=>{
+		if(start === end){
+			clearInterval(autowritng);
+		}
+	}
+	let autowritng = setInterval(startwriting,200);
+</script>
+</html>
