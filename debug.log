@@ -12,3 +12,5 @@
 [1213/124850.260:ERROR:exception_snapshot_win.cc(99)] thread ID 2988 not found in process
 [1213/124850.260:ERROR:exception_snapshot_win.cc(99)] thread ID 9176 not found in process
 [1219/091252.745:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[0103/091859.916:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[0110/091817.388:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)

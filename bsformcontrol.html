@@ -6,8 +6,17 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
 <!-- Start Libraries -->
+<!-- Summernote inc js1 -->
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+
 <!-- Select2 inc css1 -->
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+
+<!-- Dropzone css -->
+<link rel="stylesheet" type="text/css" href="assets/libs/dropzone/dist/min/dropzone.min.css">
+
+<!-- Flatpickr css -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 <!-- End libraries -->
 <style type="text/css">
 	.row{
@@ -19,7 +28,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<form action="" method="POST" enctype="multipart/form-data">
+				
 					<!-- Start row -->
 					<div class="row">
 						<div class="col-md-6 mb-3">
@@ -39,7 +48,7 @@
 						</div>
 						<div class="col-md-6 mb-3">
 							<label for="pwd">Password</label>
-							<input type="password" name="password" id="password" class="form-control form-control-sm" placeholder="Enter Your Password">
+							<input type="password" name="password" id="password" class="form-control form-control-sm" placeholder="Enter Your Password" autofocus>
 						</div>
 						<div class="col-md-6 mb-3">
 							<label for="country">Country</label>
@@ -71,13 +80,40 @@
 								<label for="genderf">Female</label>
 							</div>
 						</div>
-						<div class="col-md-6 mb-3">
-							<label for="nrc">NRC</label>
-							<input type="file" name="nrc" id="nrc" class="form-control form-control-sm rounded-0">
+						<div class="col-md-3 mb-3">
+							<label>Date of Birth</label>
+							<input type="date" name="date" class="form-control" id="date">
 						</div>
+						<div class="col-md-3 mb-3">
+							<div class="form-check">
+								<label>Fav Music</label>
+								<input type="checkbox" name="favname" id="pop" class="form-check-input">
+								<label for="pop">Pop</label>
+							</div>
+							<div class="form-check">
+								<input type="checkbox" name="favname" id="rock" class="form-check-input">
+								<label for="rock">Rock</label>
+							</div>
+							<div class="form-check">
+								<input type="checkbox" name="favname" id="hiphop" class="form-check-input">
+								<label for="hiphop">Hip-hop</label>
+							</div>
+						</div>
+						<label for="nrc">NRC</label>
+						<form action="/file-upload" class="dropzone col-md-6 mb-3" id="my-awesome-dropzone"  method="POST" enctype="multipart/form-data">
+						<div class=" fallback ">
+							
+							<input type="file" name="file"  class="form-control form-control-sm rounded-0" multiple>
+						</div>
+						</form>
+						<div class="col-md-6 mb-3">
+							<label for="score">Score</label>
+							<input type="range" name="score" id="score" class="form-range" min="0" max="100" step="5" value="5">
+						</div>
+
 						<div class="col-md-12 mb-3">
 							<label for="bio">Summary BIO</label>
-							<textarea name="bio" id="bio" class="form-control form-control-sm rounded-0" rows="5"></textarea>
+							<textarea name="bio" id="bio"></textarea>
 						</div>
 						<div class="col-md-12 mb-3">
 							<div class="form-check form-switch">
@@ -90,21 +126,59 @@
 					<div class="col-md-12">
 							<button type="submit" name="submit" id="submit" class="btn btn-primary rounded-0 btn-sm float-end">Submit</button>
 						</div>
-				</form>
+				
 			</div>
 		</div>
 	</div>
 </body>
+<!-- bootstrap 5 start -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"></script>
+<!-- bootstrap 5 end -->
+
 <!-- Start libraries -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" type="text/javascript"></script>
+
 <!-- Select2 inc css1 -->
-<script src="https://code.jquery.com/jquery-3.5.1.min.js" type="text/javascript">
-</script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+
+<!-- Summernote inc  -->
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+
+<!-- dropzone -->
+<script src="assets/libs/dropzone/dist/min/dropzone.min.js"></script>
+
+<!-- Flatpickr -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
 <script type="text/javascript">
 	$(document).ready(function() {
+		
+	// For Select2
     $('#role').select2();
+    
+    // For flatpickr
+    $("#date").flatpickr({
+    altInput: true,
+    altFormat: "F j, Y",
+    dateFormat: "Y-m-d",
+}
+);
+    // For Summernote
+   $('#bio').summernote({
+        placeholder: 'Enter Your bio',
+        tabsize: 2,
+        height: 120,
+        toolbar: [
+          ['style', ['style']],
+          ['font', ['bold', 'underline']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['table', ['table']],
+          ['insert', ['link']],
+        ]
+      });
+  
+
 });
 </script>
 <!-- End libraries -->
